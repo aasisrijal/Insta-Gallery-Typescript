@@ -4,16 +4,16 @@ import { motion } from "framer-motion";
 import useFirestore from "../hooks/useFirestore";
 
 interface ImageGridType {
-    setSelectImg: (url:string) => void
+  setSelectImg: (url: string) => void
 }
 
-const ImageGrid:React.FC<ImageGridType> = ({ setSelectImg }) => {
+const ImageGrid: React.FC<ImageGridType> = ({ setSelectImg }) => {
   const { docs } = useFirestore("images");
 
   return (
     <div className="img-grid">
       {docs &&
-        docs.map((doc:any) => (
+        docs.map((doc: any) => (
           <motion.div
             className="img-wrap"
             key={doc.id}

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Header:React.FC = () => {
+const Header: React.FC = () => {
   return (
     <div className='title'>
         <h1>Insta Gallery</h1>

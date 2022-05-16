@@ -2,17 +2,17 @@ import React, { useState } from "react";
 
 import ProgressBar from "./ProgressBar";
 
-const UploadForm:React.FC = () => {
+const UploadForm: React.FC = () => {
   const [file, setFile] = useState<File | undefined>();
   const [error, setError] = useState<string | null>(null);
 
   const types = ["image/png", "image/jpeg"];
 
   const setFunction = (file: File | undefined) => {
-      setFile(file)
+    setFile(file)
   }
 
-  const changeHandler = (e:React.ChangeEvent<HTMLInputElement>) => {
+  const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files === null) {
         return
       }

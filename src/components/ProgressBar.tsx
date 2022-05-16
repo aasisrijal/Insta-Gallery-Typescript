@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 import storage from "../hooks/useStorage";
 
 interface ProgressBarProps {
-    file: File,
-    setFile: (file:File|undefined) => void
+  file: File,
+  setFile: (file: File | undefined) => void
 }
 
-const ProgressBar:React.FC<ProgressBarProps> = ({ file, setFile }) => {
+const ProgressBar: React.FC<ProgressBarProps> = ({ file, setFile }) => {
   const { url, progress } = storage(file);
 
   useEffect(() => {
@@ -21,7 +21,7 @@ const ProgressBar:React.FC<ProgressBarProps> = ({ file, setFile }) => {
       className="progress-bar"
       initial={{ width: 0 }}
       animate={{ width: progress + "%" }}
-    ></motion.div>
+    />
   );
 };
 

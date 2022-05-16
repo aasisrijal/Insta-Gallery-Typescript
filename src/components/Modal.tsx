@@ -3,11 +3,11 @@ import { motion } from "framer-motion";
 
 
 interface ModalType {
-    selectImg: string;
-    setSelectImg: (img:string|undefined)=> void
+  selectImg: string;
+  setSelectImg: (img: string|undefined) => void
 }
 
-const Modal:React.FC<ModalType> = ({ selectImg, setSelectImg }) => {
+const Modal: React.FC<ModalType> = ({ selectImg, setSelectImg }) => {
   const handleClick = (e: any | undefined) => {
     if (e!.target.classList.contains("backdrop")) {
       setSelectImg(undefined);
