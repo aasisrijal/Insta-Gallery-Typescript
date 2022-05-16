@@ -1,24 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Header from './components/Header';
+import UploadForm from './components/UploadForm';
+import ImageGrid from './components/ImageGrid';
+import Modal from './components/Modal';
 
-function App() {
+const App:React.FC = () => {
+  const [selectImg, setSelectImg] = useState<string | undefined>(undefined);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <UploadForm />
+      <ImageGrid setSelectImg={setSelectImg} />
+      {selectImg && <Modal selectImg={selectImg} setSelectImg={setSelectImg} />}
     </div>
   );
 }
