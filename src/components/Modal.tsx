@@ -8,7 +8,7 @@ interface ModalType {
 }
 
 const Modal: React.FC<ModalType> = ({ selectImg, setSelectImg }) => {
-  const handleClick = (e: any | undefined) => {
+  const handleClick = (e: undefined) => {
     if (e!.target.classList.contains("backdrop")) {
       setSelectImg(undefined);
     }

@@ -13,7 +13,7 @@ const ImageGrid: React.FC<ImageGridType> = ({ setSelectImg }) => {
   return (
     <div className="img-grid">
       {docs &&
-        docs.map((doc: any) => (
+        docs.map((doc) => (
           <motion.div
             className="img-wrap"
             key={doc.id}

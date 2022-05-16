@@ -14,17 +14,17 @@ const useStorage = (file: File) => {
 
     storageRef.put(file).on(
       "state_changed",
-      (snap: any) => {
+      (snap) => {
         let percent = (snap.bytesTransferred / snap.totalBytes) * 100;
         setProgress(percent);
       },
-      (err: any) => {
+      (err) => {
         setError(err);
       },
       async () => {
         const url = await storageRef.getDownloadURL();
-        const createAt = timestamp();
-        collectionRef.add({ url, createAt });
+        const createdAt = timestamp();
+        collectionRef.add({ url, createdAt });
         setUrl(url);
       }
     );
